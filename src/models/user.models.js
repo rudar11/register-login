@@ -8,7 +8,7 @@ username:{
 },
 password:{
     type:String,
-},
+}, 
 email:{
     type:String,
     required:true
