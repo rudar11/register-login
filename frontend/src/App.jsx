@@ -4,7 +4,7 @@ import toast, { Toaster } from 'react-hot-toast'; // ✅ Toast Import
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 
-const API_URL = 'http://localhost:3000/api/tasks'; 
+const API_URL = 'https://register-login-eh1o.onrender.com/api/tasks';
 
 function App() {
   const [tasks, setTasks] = useState([]);
