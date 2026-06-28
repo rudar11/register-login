@@ -1,17 +1,23 @@
 import express from 'express'
 import connectdb from "./db/db.js"
-import authRoutes from './routes/auth.routes.js'
+
 import cookieParser from 'cookie-parser'
+const taskRoutes = require('./routes/auth.routes.js');
 
 connectdb()
 
 
 const app = express()
+app.use(cors());
 app.use(express.json())
 app.use(cookieParser())
 
 
-app.use('/api' ,authRoutes)
+// API Routes
+app.use('/api/tasks', taskRoutes);
+
+
+
 
 
 export default app

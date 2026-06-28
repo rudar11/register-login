@@ -1,14 +1,14 @@
-import * as authController from '../controllers/auth.controllers.js'
+const express = require('express');
+const router = express.Router();
+const { getTasks, createTask, updateTask, deleteTask } = require('../controllers/task.controllers');
 
-import express from 'express'
+// Routes mapping
+router.route('/')
+    .get(getTasks)
+    .post(createTask);
 
-const router = express.Router()
+router.route('/:id')
+    .put(updateTask)
+    .delete(deleteTask);
 
-
-
-router.post("/register" , authController.CreateUser)
-router.post("/login" , authController.LoginUser)
-
-
-
-export default router
+module.exports = router;
