@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const { getTasks, createTask, updateTask, deleteTask } = require('../controllers/task.controllers');
+import express from 'express';
+import { createTask, getTasks, updateTask, deleteTask } from '../controllers/task.controllers.js';
 
-// Routes mapping
+const router = express.Router();
+
 router.route('/')
     .get(getTasks)
     .post(createTask);
@@ -11,4 +11,4 @@ router.route('/:id')
     .put(updateTask)
     .delete(deleteTask);
 
-module.exports = router;
+export default router;
