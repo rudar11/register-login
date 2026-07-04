@@ -16,7 +16,7 @@ function App() {
         const response = await axios.get(API_URL);
         setTasks(response.data.data);
       } catch (err) {
-        toast.error("Failed to load tasks"); // ✅ Toast Error
+        toast.error("Failed to load tasks"); 
       }
     };
     fetchTasks();
@@ -80,5 +80,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
