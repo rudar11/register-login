@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import toast, { Toaster } from 'react-hot-toast'; // ✅ Toast Import
+import toast, { Toaster } from 'react-hot-toast'; 
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 
@@ -22,12 +22,12 @@ function App() {
     fetchTasks();
   }, []);
 
-  // 2. Naya task add karna
+  // 2. add karna
   const addTask = async (taskData) => {
     try {
       const response = await axios.post(API_URL, taskData);
       setTasks([response.data.data, ...tasks]); 
-      toast.success('Task added successfully! 🎉'); // ✅ Toast Success
+      toast.success('Task added successfully! 🎉'); 
     } catch (err) {
       toast.error(err.response?.data?.message || 'Failed to add task');
     }
@@ -38,7 +38,7 @@ function App() {
     try {
       await axios.delete(`${API_URL}/${id}`);
       setTasks(tasks.filter(task => task._id !== id));
-      toast.success('Task deleted! 🗑️'); // ✅ Toast Success
+      toast.success('Task deleted! 🗑️');
     } catch (err) {
       toast.error("Failed to delete task");
     }
@@ -50,7 +50,7 @@ function App() {
     try {
       const response = await axios.put(`${API_URL}/${id}`, { status: newStatus });
       setTasks(tasks.map(task => task._id === id ? response.data.data : task));
-      toast.success(`Task marked as ${newStatus}! ✅`); // ✅ Toast Success
+      toast.success(`Task marked as ${newStatus}! ✅`); 
     } catch (err) {
       toast.error("Failed to update status");
     }
