@@ -72,7 +72,7 @@ const TaskForm = ({ onAddTask }) => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-xl mb-8">
-      <h2 className="text-2xl font-bold text-white mb-6">Create New Task 🚀</h2>
+      <h2 className="text-2xl font-bold text-white mb-6">Create New Task </h2>
       
       <div className="mb-4">
         <input 
@@ -97,7 +97,7 @@ const TaskForm = ({ onAddTask }) => {
       
       <button 
         type="submit" 
-        className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 rounded-xl transition-all active:scale-[0.98] shadow-lg shadow-indigo-900/20"
+        className="w-full bg-indigo-600  text-white font-bold py-3.5 rounded-xl transition-all active:scale-[0.98] shadow-lg shadow-indigo-900/20"
       >
         Add Task
       </button>
