@@ -57,15 +57,28 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4 font-sans">
+    <div className="min-h-screen bg-slate-950 text-slate-100 py-10 px-4 font-sans">
       
-      {/* ✅ Ye container hai jo notification dikhayega */}
-      <Toaster position="top-right" reverseOrder={false} /> 
+      {/* Dark theme matching toast notifications */}
+      <Toaster 
+        position="top-right" 
+        reverseOrder={false}
+        toastOptions={{
+          style: {
+            background: '#1e293b', // slate-800
+            color: '#fff',
+            borderRadius: '12px',
+          },
+        }}
+      /> 
       
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-blue-600 mb-8 text-center drop-shadow-sm">
-          Task Tracker ✓
-        </h1>
+        <header className="mb-10 text-center">
+          <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 mb-2">
+            Task Tracker
+          </h1>
+          <p className="text-slate-400">Manage your daily goals efficiently</p>
+        </header>
         
         {/* Naya task add karne wala form */}
         <TaskForm onAddTask={addTask} />
@@ -80,4 +93,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
